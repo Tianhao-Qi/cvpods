@@ -145,7 +145,7 @@ if __name__ == "__main__":
     if args.num_gpus is None:
         args.num_gpus = torch.cuda.device_count()
 
-    extra_sys_path = ".." if args.dir is None else args.dir
+    extra_sys_path = os.getcwd() if args.dir is None else args.dir
     sys.path.append(extra_sys_path)
 
     from config import config
